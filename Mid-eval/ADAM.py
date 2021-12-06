@@ -32,8 +32,8 @@ class ADAM(Optimizer):
         defaults = dict(lr=0.001, beta1=0.9, beta2=0.999, eps=1e-8)
         super(ADAM, self).__init__(params, defaults)
 
-    def __setstate__(self, state):
-        super(ADAM, self).__setstate__(state)
+    # def __setstate__(self, state):
+    #     super(ADAM, self).__setstate__(state)
 
     def step(self, closure=None):
         '''
@@ -50,6 +50,7 @@ class ADAM(Optimizer):
         loss = None
         if closure is not None:
             loss = closure()
+        #print('Hi')
 
         for group in self.param_groups:
             # Get the hyperparameters
@@ -75,14 +76,17 @@ class ADAM(Optimizer):
                     # Implies first time access to the state, so set the defaults
                     state['step'] = 0
                     # Exponential moving average of gradient values
-                    state['exp_avg'] = torch.zeros_like(p)
+                    state['exp_avg'] = torch.zeros_like(p.data) # p
                     # Exponential moving average of squared gradient values
-                    state['exp_avg_sq'] = torch.zeros_like(p)
+                    state['exp_avg_sq'] = torch.zeros_like(p.data) # p
 
                 state['step'] += 1
 
                 exp_avg, exp_avg_sq = state['exp_avg'], state['exp_avg_sq']
 
+                # L2 penalty (Regularization stuff)
+                # if group['weight_decay'] != 0:
+                #     grad = grad.add(group['weight_decay'], p.data)
 
                 # Main update step
                 # 1. Update exp_avg (exp_avg = exp_avg*beta1 + (1-beta1)*grad)
@@ -90,19 +94,23 @@ class ADAM(Optimizer):
                 # 2. Update exp_avg_sq (exp_avg_sq = exp_avg_sq*beta2 + (1-beta2)*grad^2)
                 exp_avg_sq.mul_(beta2).addcmul_(grad, grad.conj(), value=1-beta2) # inplace update
                 # 3. Computing bias correction terms
-                bias_correction1 = (1-beta1**2)
-                bias_correction2 = (1-beta2**2)
+                step = state['step']
+                bias_correction1 = 1 - (beta1**step)
+                bias_correction2 = 1 - (beta2**step)
                 # 4. Compute and add small noise epsilon to the denominator to prevent it from becoming non-zero
                 #    The denominator includes its corresponding bias_correction_term2
-                denom = exp_avg_sq.sqrt().add_(eps) # (exp_avg_sq.sqrt() / math.sqrt(bias_correction1)).add_(eps)
+                denom = (exp_avg_sq.sqrt() / math.sqrt(bias_correction2)).add_(eps) # exp_avg_sq.sqrt().add_(eps) # (exp_avg_sq.sqrt() / math.sqrt(bias_correction1)).add_(eps)
                 # 5. Now calculate the effective step size (lr/bias_correction1)
                 step_size = lr/bias_correction1
+                #print('step_size: {}'.format(step_size))
                 # 6. Update the parameter p
                 # print("exp_avg: {}\ndenom: {}\nstep_size: {}".format(exp_avg, denom, step_size))
                 # print(step_size*(exp_avg/denom))
                 # p = p - step_size*(exp_avg/denom)
                 # print(p.data)
                 # print(p.grad)
-                p.data.addcdiv_(exp_avg, denom, value=-step_size)
+                # print('p.data before: {}'.format(p.data))
+                p.data.addcdiv_(exp_avg, denom, value=-1*step_size)
+                # print('p.data after: {}'.format(p.data))
 
         return loss
