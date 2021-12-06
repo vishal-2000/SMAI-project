@@ -1,0 +1,81 @@
+Optimizer :  Adam 
+
+Epoch: 1 	Training Loss: 1.623657
+Epoch: 2 	Training Loss: 1.360767
+Epoch: 3 	Training Loss: 1.303133
+Epoch: 4 	Training Loss: 1.269232
+Epoch: 5 	Training Loss: 1.257315
+Epoch: 6 	Training Loss: 1.246550
+Epoch: 7 	Training Loss: 1.236674
+Epoch: 8 	Training Loss: 1.240971
+Epoch: 9 	Training Loss: 1.235260
+Epoch: 10 	Training Loss: 1.228434
+
+-----------------------------------------
+
+Optimizer :  RMSprop 
+
+Epoch: 1 	Training Loss: 1.637046
+Epoch: 2 	Training Loss: 1.405957
+Epoch: 3 	Training Loss: 1.376251
+Epoch: 4 	Training Loss: 1.362994
+Epoch: 5 	Training Loss: 1.348354
+Epoch: 6 	Training Loss: 1.342804
+Epoch: 7 	Training Loss: 1.331659
+Epoch: 8 	Training Loss: 1.327502
+Epoch: 9 	Training Loss: 1.326657
+Epoch: 10 	Training Loss: 1.325062
+
+-----------------------------------------
+
+Optimizer :  SGD 
+
+Epoch: 1 	Training Loss: 1.804134
+Epoch: 2 	Training Loss: 0.901145
+Epoch: 3 	Training Loss: 0.715842
+Epoch: 4 	Training Loss: 0.611251
+Epoch: 5 	Training Loss: 0.523616
+Epoch: 6 	Training Loss: 0.456518
+Epoch: 7 	Training Loss: 0.411717
+Epoch: 8 	Training Loss: 0.385643
+Epoch: 9 	Training Loss: 0.365637
+Epoch: 10 	Training Loss: 0.349207
+
+-----------------------------------------
+
+Optimizer :  Adadelta 
+
+Epoch: 1 	Training Loss: 2.850416
+Epoch: 2 	Training Loss: 2.537554
+Epoch: 3 	Training Loss: 2.410545
+Epoch: 4 	Training Loss: 2.335754
+Epoch: 5 	Training Loss: 2.258633
+Epoch: 6 	Training Loss: 2.172926
+Epoch: 7 	Training Loss: 2.079027
+Epoch: 8 	Training Loss: 1.982271
+Epoch: 9 	Training Loss: 1.907336
+Epoch: 10 	Training Loss: 1.856674
+
+-----------------------------------------
+
+Optimizer :  Adam_scratch 
+
+/home/ruthwik/sem5/smail/project/SMAI-project/Mid-eval/ADAM.py:88: UserWarning: This overload of add_ is deprecated:
+	add_(Number alpha, Tensor other)
+Consider using one of the following signatures instead:
+	add_(Tensor other, *, Number alpha) (Triggered internally at  ../torch/csrc/utils/python_arg_parser.cpp:1025.)
+  exp_avg.mul_(beta1).add_(1-beta1, grad) # inplace update
+Epoch: 1 	Training Loss: 1.813050
+Epoch: 2 	Training Loss: 1.433924
+Epoch: 3 	Training Loss: 1.338210
+Epoch: 4 	Training Loss: 1.277193
+Epoch: 5 	Training Loss: 1.237608
+Epoch: 6 	Training Loss: 1.208305
+Epoch: 7 	Training Loss: 1.184669
+Epoch: 8 	Training Loss: 1.167738
+Epoch: 9 	Training Loss: 1.154586
+Epoch: 10 	Training Loss: 1.142417
+
+-----------------------------------------
+
+{'Adam': [1.6236568464140098, 1.3607667423089345, 1.3031329932510853, 1.269232151468595, 1.257314824461937, 1.2465499666829905, 1.2366740450561047, 1.2409711832205454, 1.235260269810756, 1.2284342555900414], 'RMSprop': [1.63704616634051, 1.4059568405052025, 1.3762513243059318, 1.36299393243591, 1.3483538818558056, 1.3428037719925245, 1.3316585322022438, 1.3275019667049248, 1.3266572316785654, 1.3250616030891735], 'SGD': [1.8041342911819618, 0.9011447363694509, 0.7158423385421435, 0.6112510893642903, 0.5236161359498899, 0.4565183417138954, 0.4117174615872403, 0.38564291675637163, 0.36563652286988996, 0.34920681434962897], 'Adadelta': [2.850415841579437, 2.5375537600517273, 2.410545161406199, 2.335754469235738, 2.258632840037346, 2.17292623257637, 2.0790274198055267, 1.9822706162134807, 1.9073362153172493, 1.8566743245124817], 'Adam_scratch': [1.8130496397217115, 1.433923944403728, 1.3382100181380907, 1.277193436374267, 1.2376079548398653, 1.2083050213654836, 1.1846685710847378, 1.1677380008200804, 1.1545860556960106, 1.1424172181437413]}

@@ -83,11 +83,12 @@ class ADAM(Optimizer):
 
                 exp_avg, exp_avg_sq = state['exp_avg'], state['exp_avg_sq']
 
+
                 # Main update step
                 # 1. Update exp_avg (exp_avg = exp_avg*beta1 + (1-beta1)*grad)
-                exp_avg.mul_(beta1).add_(1-beta1, grad) # inplace update 
+                exp_avg.mul_(beta1).add_(other=grad, alpha=1-beta1) # inplace update 
                 # 2. Update exp_avg_sq (exp_avg_sq = exp_avg_sq*beta2 + (1-beta2)*grad^2)
-                exp_avg_sq.mul_(beta2).addcmul_(grad, grad.conj(), value=1-beta1) # inplace update
+                exp_avg_sq.mul_(beta2).addcmul_(grad, grad.conj(), value=1-beta2) # inplace update
                 # 3. Computing bias correction terms
                 bias_correction1 = (1-beta1**2)
                 bias_correction2 = (1-beta2**2)

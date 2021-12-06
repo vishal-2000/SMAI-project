@@ -1,0 +1,16 @@
+Optimizer : Adam
+Epoch: 1 	Training Loss: 2.309922Epoch: 2 	Training Loss: 2.248778Epoch: 3 	Training Loss: 2.215048Epoch: 4 	Training Loss: 2.192898Epoch: 5 	Training Loss: 2.158788Epoch: 6 	Training Loss: 2.138735Epoch: 7 	Training Loss: 2.125749Epoch: 8 	Training Loss: 2.111863Epoch: 9 	Training Loss: 2.104198Epoch: 10 	Training Loss: 2.102686Epoch: 11 	Training Loss: 2.098706Epoch: 12 	Training Loss: 2.096210Epoch: 13 	Training Loss: 2.090335Epoch: 14 	Training Loss: 2.087358Epoch: 15 	Training Loss: 2.087223
+-----------------------------------------
+Optimizer : RMSprop
+Epoch: 1 	Training Loss: 2.498310Epoch: 2 	Training Loss: 2.359848Epoch: 3 	Training Loss: 2.320020Epoch: 4 	Training Loss: 2.272660Epoch: 5 	Training Loss: 2.234714Epoch: 6 	Training Loss: 2.217477Epoch: 7 	Training Loss: 2.196776Epoch: 8 	Training Loss: 2.187967Epoch: 9 	Training Loss: 2.180216Epoch: 10 	Training Loss: 2.156493Epoch: 11 	Training Loss: 2.138732Epoch: 12 	Training Loss: 2.129744Epoch: 13 	Training Loss: 2.127190Epoch: 14 	Training Loss: 2.121957Epoch: 15 	Training Loss: 2.119983
+-----------------------------------------
+Optimizer : SGD
+Epoch: 1 	Training Loss: 2.421543Epoch: 2 	Training Loss: 2.304791Epoch: 3 	Training Loss: 2.277125Epoch: 4 	Training Loss: 2.260695Epoch: 5 	Training Loss: 2.249292Epoch: 6 	Training Loss: 2.239708Epoch: 7 	Training Loss: 2.230338Epoch: 8 	Training Loss: 2.221254Epoch: 9 	Training Loss: 2.196687Epoch: 10 	Training Loss: 2.177483Epoch: 11 	Training Loss: 2.160617Epoch: 12 	Training Loss: 2.142811Epoch: 13 	Training Loss: 2.124600Epoch: 14 	Training Loss: 2.107210Epoch: 15 	Training Loss: 2.091873
+-----------------------------------------
+Optimizer : Adadelta
+Epoch: 1 	Training Loss: 2.992511Epoch: 2 	Training Loss: 2.377244Epoch: 3 	Training Loss: 2.353829Epoch: 4 	Training Loss: 2.338305Epoch: 5 	Training Loss: 2.326203Epoch: 6 	Training Loss: 2.315737Epoch: 7 	Training Loss: 2.307124Epoch: 8 	Training Loss: 2.300036Epoch: 9 	Training Loss: 2.294509Epoch: 10 	Training Loss: 2.289948Epoch: 11 	Training Loss: 2.285947Epoch: 12 	Training Loss: 2.282313Epoch: 13 	Training Loss: 2.278976Epoch: 14 	Training Loss: 2.275858Epoch: 15 	Training Loss: 2.272916
+-----------------------------------------
+Optimizer : Adam_scratch
+Epoch: 1 	Training Loss: 2.293215Epoch: 2 	Training Loss: 2.196778Epoch: 3 	Training Loss: 2.147907Epoch: 4 	Training Loss: 2.128516Epoch: 5 	Training Loss: 2.116738Epoch: 6 	Training Loss: 2.109833Epoch: 7 	Training Loss: 2.104421Epoch: 8 	Training Loss: 2.091853Epoch: 9 	Training Loss: 2.077960Epoch: 10 	Training Loss: 2.067472Epoch: 11 	Training Loss: 2.060240Epoch: 12 	Training Loss: 2.055525Epoch: 13 	Training Loss: 2.049441Epoch: 14 	Training Loss: 2.044897Epoch: 15 	Training Loss: 2.041169
+-----------------------------------------
+***********************************OVER********************************
